@@ -1,0 +1,21 @@
+<div class="border-slate-100 border-b p-3 fl gap-2 justify-between">
+    <table class="text-left w-full border"> 
+        <tr class="px-5">
+            <th class="border p-2"> Nombre </th>
+            <th class="border p-2"> Usuarios </th>
+            <th class="border p-2"> Acciones </th>
+        </tr>
+        @for (role of roles; track role.id) {
+            <tr class="border-b">
+                <td class="border p-3">{{role.name}}</td>
+                <td class="border p-3">{{role.totalUsers}}</td>
+                <td class="border p-3 flex items-center gap-5">
+                    <div>
+                        <mat-icon (click)="delete(role.id)" class="cursor-poneter text-red-600">delete</mat-icon>
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
